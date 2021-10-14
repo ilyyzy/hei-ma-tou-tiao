@@ -1,24 +1,39 @@
-# hmtt
+# 黑马头条项目
 
-## Project setup
+> hei-ma-tou-tiao：商城项目。
+
+## 项目工作组
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 编译和热加载用于开发
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### 编译和最小化产品
 ```
 yarn build
 ```
 
-### Lints and fixes files
+### 检查和修复文件
 ```
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 自定义配置
+看 [配置参考](https://cli.vuejs.org/config/).
+
+
+
+## 分支
+
+**origin** 
+
+- master：主分支
+- login：登录分支
+- home：主页分支
+
+
+
