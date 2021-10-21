@@ -6,7 +6,7 @@ import store from '../store'
 // 调用 axios.create() 方法，创建 axios 的实例对象
 const instance = axios.create({
   // 请求根路径
-  baseURL: 'http://www.liulongbin.top:8000'
+  baseURL: 'http://toutiao.itheima.net'
 })
 
 // 添加请求拦截器
