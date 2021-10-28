@@ -27,3 +27,7 @@ export const reportsArticle = (id, type) => {
     type: type
   })
 }
+// 获取频道列表数据
+export const getAllChannelAPI = () => {
+  return request.get('/v1_0/channels')
+}
