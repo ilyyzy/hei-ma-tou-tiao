@@ -58,6 +58,7 @@ export default {
       if (res.message === 'OK') {
         console.log(res.data)
         this.updateTokenInfo(res.data)
+        // this.$router.push('/' + window.location.hash.split('?')[1].split('=')[1])
         this.$router.push('/')
       }
     }
