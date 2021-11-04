@@ -22,3 +22,8 @@ export const exchangeTokenAPI = refreshToken => {
     }
   })
 }
+
+// 请求用户基本信息的 API
+export const getUserInfoAPI = () => {
+  return request.get('/v1_0/user')
+}
