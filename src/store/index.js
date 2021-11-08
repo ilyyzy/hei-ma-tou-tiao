@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import { getUserInfoAPI } from '@/api/userAPI.js'
+import { getUserInfoAPI, getUserProfileAPI } from '@/api/userAPI.js'
 
 Vue.use(Vuex)
 
@@ -12,7 +12,8 @@ const initState = {
     refresh_token: ''
   },
   // 用户的基本信息
-  userInfo: {}
+  userInfo: {},
+  userProfile: {}
 }
 
 const stateStr = window.localStorage.getItem('state')
@@ -47,6 +48,19 @@ export default new Vuex.Store({
       }
 
       localStorage.removeItem('state')
+    },
+    cleanState(state) {
+      // 1. 清空 vuex 中的数据
+      state.tokenInfo = {}
+      state.userInfo = {}
+      state.userProfile = {}
+
+      // 2. 将清空后的 state 存储到本地
+      this.commit('saveStateToStorage')
+    },
+    updateUserProfile(state, payload) {
+      state.userProfile = payload
+      this.commit('saveStateToStorage')
     }
   },
   actions: {
@@ -58,6 +72,14 @@ export default new Vuex.Store({
         // TODO：把数据转交给 Mutation 方法   ctx.commit('Mutation方法名')
         ctx.commit('updateUserInfo', res.data)
         // console.log(res, '用户信息')
+      }
+    },
+    async initUserProfile(ctx) {
+      // 调用 API 接口
+      const { data: res } = await getUserProfileAPI()
+      if (res.message === 'OK') {
+        // TODO：把请求到的数据转交给 Mutation 方法   ctx.commit('Mutation方法名')
+        ctx.commit('updateUserProfile', res.data)
       }
     }
   },

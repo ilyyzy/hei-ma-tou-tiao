@@ -9,6 +9,7 @@ import User from '@/views/User'
 import Search from '@/views/Search/Search'
 import SearchResult from '@/views/SearchResult/SearchResult'
 import ArticleDetail from '@/views/ArticleDetail'
+import UserEdit from '@/views/UserEdit/UserEdit.vue'
 
 Vue.use(VueRouter)
 
@@ -48,7 +49,8 @@ const routes = [
         component: ArticleDetail,
         name: 'ArticleDetail',
         props: true
-      }
+      },
+      { path: '/user/edit', component: UserEdit, name: 'user-edit' }
     ]
   }
 ]

@@ -27,3 +27,9 @@ export const exchangeTokenAPI = refreshToken => {
 export const getUserInfoAPI = () => {
   return request.get('/v1_0/user')
 }
+export const getUserProfileAPI = () => {
+  return request.get('/v1_0/user/profile')
+}
+export const updateUserProfileAPI = obj => {
+  return request.patch('/v1_0/user/profile', obj)
+}
